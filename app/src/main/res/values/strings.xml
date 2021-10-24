@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ir.anexception.shamse</string>
+    <string name="app_name">Shamse</string>
+    <string name="tile_shamse">Shamse</string>
 </resources>
