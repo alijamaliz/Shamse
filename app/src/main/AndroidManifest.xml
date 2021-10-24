@@ -44,7 +44,7 @@
         </service>
 
         <service
-            android:name="tiles.YaFatemeTile"
+            android:name=".tiles.YaFatemeTile"
             android:enabled="true"
             android:exported="true"
             android:label="@string/tile_ya_fateme"
@@ -57,7 +57,7 @@
         </service>
 
         <service
-            android:name="tiles.HajGhasemTile"
+            android:name=".tiles.HajGhasemTile"
             android:enabled="true"
             android:exported="true"
             android:label="@string/tile_haj_ghasem"
