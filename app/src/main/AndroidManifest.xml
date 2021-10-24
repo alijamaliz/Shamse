@@ -56,6 +56,19 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name="tiles.HajGhasemTile"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/tile_haj_ghasem"
+            android:icon="@drawable/haj_ghasem"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
