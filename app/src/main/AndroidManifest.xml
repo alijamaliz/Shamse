@@ -18,11 +18,24 @@
         </activity>
 
         <service
-            android:name=".tiles.BaseTile"
+            android:name=".tiles.ShamseTile"
             android:enabled="true"
             android:exported="true"
             android:label="@string/tile_shamse"
             android:icon="@drawable/shamse"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".tiles.YaMahdiTile"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/tile_ya_mahdi"
+            android:icon="@drawable/ya_mahdi"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action

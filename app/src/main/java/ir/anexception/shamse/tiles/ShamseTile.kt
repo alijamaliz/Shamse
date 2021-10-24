@@ -3,7 +3,7 @@ package ir.anexception.shamse.tiles
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
-class BaseTile : TileService() {
+class ShamseTile : TileService() {
     override fun onTileAdded() {
         super.onTileAdded()
         qsTile.state = Tile.STATE_ACTIVE
