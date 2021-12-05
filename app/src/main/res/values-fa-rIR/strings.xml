@@ -5,4 +5,8 @@
     <string name="tile_ya_mahdi">یا مهدی</string>
     <string name="tile_ya_fateme">یا فاطمه</string>
     <string name="tile_haj_ghasem">سردار دلها</string>
+    <string name="guide1">کاشی‌های شمسه به گوشی اضافه شدند.</string>
+    <string name="guide2">برای استفاده از کاشی‌ها کافیست مراحل زیر را انجام دهید:</string>
+    <string name="guide3">نوار اعلانات خود را پایین کشیده و گزینه ویرایش را انتخاب نمایید.</string>
+    <string name="guide4">سپس می‌توانید کاشی‌ها را کشیده و در نوار اعلانات خود رها کنید.</string>
 </resources>
