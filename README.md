@@ -12,8 +12,6 @@
 
 ## تصاویر
 
-
-![ScreenShot 1](images/screen1.jpg)
 ![ScreenShot 2](images/screen2.jpg)
 
 </p>
