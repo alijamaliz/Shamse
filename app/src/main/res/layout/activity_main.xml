@@ -14,8 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <ImageView
@@ -31,18 +31,56 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginVertical="16dp"
-                android:textSize="18sp"
-                android:textAlignment="center"
                 android:text="@string/guide1"
+                android:textAlignment="center"
+                android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="8dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="4dp"
+                        android:text="@string/select_city"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/selected_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="4dp"
+                        android:drawableStart="@drawable/ic_down"
+                        android:textColor="#000" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textAlignment="center"
-                android:text="@string/guide2" />
+                android:text="@string/guide2"
+                android:textAlignment="center" />
 
 
             <TextView
@@ -50,8 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textAlignment="center"
-                android:text="@string/guide3"  />
+                android:text="@string/guide3"
+                android:textAlignment="center" />
 
 
             <ImageView
@@ -65,8 +103,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textAlignment="center"
-                android:text="@string/guide4" />
+                android:text="@string/guide4"
+                android:textAlignment="center" />
 
             <ImageView
                 android:layout_width="match_parent"
