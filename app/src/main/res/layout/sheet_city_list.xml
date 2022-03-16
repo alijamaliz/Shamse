@@ -18,10 +18,15 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/state_list"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/item_state" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/city_sheet_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,6 +37,7 @@
                 android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_select_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
@@ -66,7 +67,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:layout_margin="4dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
                         android:drawableStart="@drawable/ic_down"
                         android:textColor="#000" />
 
