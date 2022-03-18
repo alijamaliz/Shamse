@@ -81,6 +81,10 @@ object NextAzan {
             nextAzanType = "نیمه شب"
             nextAzanHour = midnightHour
             nextAzanMinute = midnightMinute
+        } else {
+            nextAzanType = "صبح"
+            nextAzanHour = fajrHour
+            nextAzanMinute = fajrMinute
         }
 
 
@@ -93,6 +97,10 @@ object NextAzan {
         Log.i("GOLABI", "maghrib hour: $maghribHour   maghrib minute: $maghribMinute")
         Log.i("GOLABI", "isha hour: $ishaHour   isha minute: $ishaMinute")
         Log.i("GOLABI", "mid  hour: $midnightHour   mid minute: $midnightMinute")
+        Log.i(
+            "GOLABI",
+            "nextAzanType: $nextAzanType     nextAzanHour: $nextAzanHour     nextAzanMinute $nextAzanMinute"
+        )
 
 
         return listOf(nextAzanType, nextAzanHour, nextAzanMinute)
