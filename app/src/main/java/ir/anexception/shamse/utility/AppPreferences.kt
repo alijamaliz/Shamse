@@ -14,11 +14,7 @@ object AppPreferences {
     private val STATE_LONGITUDE = Pair("state_longitude", -1.0)
 
 
-    private inline fun SharedPreferences.edit(operation: (SharedPreferences.Editor) -> Unit) {
-        val editor = edit()
-        operation(editor)
-        editor.apply()
-    }
+
 
 
     fun init(context: Context) {

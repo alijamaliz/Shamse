@@ -2,10 +2,12 @@ package ir.anexception.shamse.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.github.persiancalendar.praytimes.Coordinates
 import ir.anexception.shamse.databinding.ActivityMainBinding
 import ir.anexception.shamse.model.State
 import ir.anexception.shamse.ui.citysheet.StateSheet
 import ir.anexception.shamse.utility.AppPreferences
+import ir.anexception.shamse.utility.NextAzan.calculateNextAzan
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -27,6 +29,16 @@ class MainActivity : AppCompatActivity() {
         binding.cardSelectCity.setOnClickListener {
             stateSheet.show(supportFragmentManager, stateSheet.tag)
         }
+
+        calculateNextAzan(
+            Coordinates(
+                AppPreferences.stateLatitude.toDouble(),
+                AppPreferences.stateLongitude.toDouble(),
+                0.0
+            )
+        )
+
+
     }
 
 }
