@@ -2,11 +2,15 @@ package ir.anexception.shamse.utility
 
 import android.util.Log
 import io.github.persiancalendar.praytimes.*
+import ir.anexception.shamse.BuildConfig
 import java.util.*
 
 object NextAzan {
 
     fun calculateNextAzan(coordinates: Coordinates): List<Any> {
+        if (coordinates.latitude < 0) {
+            return listOf("شهر انتخاب نشده", 0, 0)
+        }
         var nextAzanType = ""
         var nextAzanHour = -1
         var nextAzanMinute = -1
@@ -87,22 +91,20 @@ object NextAzan {
             nextAzanMinute = fajrMinute
         }
 
-
-
-        Log.i("GOLABI", "fajr hour: $fajrHour   fajr minute: $fajrMinute")
-        Log.i("GOLABI", "rise hour: $sunRiseHour   rise minute: $sunRiseMinute")
-        Log.i("GOLABI", "zuhr hour: $zuhrHour   zuhr minute: $zuhrMinute")
-        Log.i("GOLABI", "asr hour: $asrHour   asr minute: $asrMinute")
-        Log.i("GOLABI", "set hour: $sunSetHour   set minute: $sunSetMinute")
-        Log.i("GOLABI", "maghrib hour: $maghribHour   maghrib minute: $maghribMinute")
-        Log.i("GOLABI", "isha hour: $ishaHour   isha minute: $ishaMinute")
-        Log.i("GOLABI", "mid  hour: $midnightHour   mid minute: $midnightMinute")
-        Log.i(
-            "GOLABI",
-            "nextAzanType: $nextAzanType     nextAzanHour: $nextAzanHour     nextAzanMinute $nextAzanMinute"
-        )
-
-
+        if (BuildConfig.DEBUG) {
+            Log.i("NextAzan", "fajr hour: $fajrHour   fajr minute: $fajrMinute")
+            Log.i("NextAzan", "rise hour: $sunRiseHour   rise minute: $sunRiseMinute")
+            Log.i("NextAzan", "zuhr hour: $zuhrHour   zuhr minute: $zuhrMinute")
+            Log.i("NextAzan", "asr hour: $asrHour   asr minute: $asrMinute")
+            Log.i("NextAzan", "set hour: $sunSetHour   set minute: $sunSetMinute")
+            Log.i("NextAzan", "maghrib hour: $maghribHour   maghrib minute: $maghribMinute")
+            Log.i("NextAzan", "isha hour: $ishaHour   isha minute: $ishaMinute")
+            Log.i("NextAzan", "mid  hour: $midnightHour   mid minute: $midnightMinute")
+            Log.i(
+                "NextAzan",
+                "nextAzanType: $nextAzanType     nextAzanHour: $nextAzanHour     nextAzanMinute $nextAzanMinute"
+            )
+        }
         return listOf(nextAzanType, nextAzanHour, nextAzanMinute)
     }
 

@@ -5,7 +5,7 @@ import android.graphics.*
 object Tool {
     fun createStatusIcon(text: String): Bitmap {
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        paint.textSize =  75f
+        paint.textSize = 40f
         paint.textAlign = Paint.Align.CENTER
         val bounds = Rect()
         paint.color = Color.WHITE
