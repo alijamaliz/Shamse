@@ -29,16 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding.cardSelectCity.setOnClickListener {
             stateSheet.show(supportFragmentManager, stateSheet.tag)
         }
-
-        calculateNextAzan(
-            Coordinates(
-                AppPreferences.stateLatitude.toDouble(),
-                AppPreferences.stateLongitude.toDouble(),
-                0.0
-            )
-        )
-
-
     }
 
 }

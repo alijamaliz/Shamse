@@ -13,10 +13,6 @@ object AppPreferences {
     private val STATE_LATITUDE = Pair("state_latitude", -1.0)
     private val STATE_LONGITUDE = Pair("state_longitude", -1.0)
 
-
-
-
-
     fun init(context: Context) {
         preferences = context.getSharedPreferences(NAME, MODE)
     }

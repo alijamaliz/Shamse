@@ -38,7 +38,6 @@ class NextAzanTile : TileService() {
                 0.0
             )
         )
-
         qsTile.label = nextAzan[0].toString()
         qsTile.icon = Icon.createWithBitmap(createStatusIcon("${nextAzan[1]}:${nextAzan[2]}"))
         qsTile.state = Tile.STATE_ACTIVE

@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import ir.anexception.shamse.R
 import ir.anexception.shamse.databinding.ItemStateBinding
 import ir.anexception.shamse.databinding.SheetCityListBinding
 import ir.anexception.shamse.model.State
 import ir.anexception.shamse.utility.AppPreferences
 
-class StateSheet() : BottomSheetDialogFragment() {
+class StateSheet : BottomSheetDialogFragment() {
 
     lateinit var binding: SheetCityListBinding
     private var stateList: MutableList<State> = mutableListOf()
@@ -26,12 +27,13 @@ class StateSheet() : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = SheetCityListBinding.inflate(inflater, container, false)
-
-
+        var cnt = 1
         for (state in stateList) {
             val view =
                 ItemStateBinding.inflate(LayoutInflater.from(context), binding.citySheetList, true)
             view.itemCityName.text = state.name
+            view.root.setBackgroundColor(resources.getColor(if (cnt % 2 == 0) R.color.white else R.color.lite_green))
+            cnt++
             view.root.setOnClickListener {
                 AppPreferences.stateName = state.name
                 AppPreferences.stateLatitude = state.latitude.toLong()
@@ -39,18 +41,13 @@ class StateSheet() : BottomSheetDialogFragment() {
                 stateSelection.onStateSelected(state)
                 dismiss()
             }
-
         }
-
-
         return binding.root
-
     }
 
     fun setStateSelection(stateSelection: StateSelection) {
         this.stateSelection = stateSelection
     }
-
 
     private fun initializeList() {
         stateList.add(State("آذربایجان شرقی", 38.48290814, 47.06290482))
@@ -86,7 +83,7 @@ class StateSheet() : BottomSheetDialogFragment() {
         stateList.add(State("یزد", 31.92005292, 54.37000403))
     }
 
-    public interface StateSelection {
+    interface StateSelection {
         fun onStateSelected(state: State)
     }
 }

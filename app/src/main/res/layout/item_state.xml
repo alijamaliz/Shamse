@@ -3,8 +3,7 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
-    android:background="#fff"
+    android:background="@color/white"
     android:paddingHorizontal="8dp"
     android:paddingVertical="4dp">
 
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_margin="4dp"
-        android:textColor="#000"
+        android:textColor="@color/black"
         tool:text="تهران" />
 
 </RelativeLayout>
