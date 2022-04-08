@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.selectedCity.text = AppPreferences.stateName
 
-        var stateSheet = StateSheet()
+        val stateSheet = StateSheet()
         stateSheet.setStateSelection(stateSelectionListener)
         binding.cardSelectCity.setOnClickListener {
             stateSheet.show(supportFragmentManager, stateSheet.tag)
