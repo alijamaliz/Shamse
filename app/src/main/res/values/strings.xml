@@ -42,4 +42,6 @@
     <string name="state_hormozgan">هرمزگان</string>
     <string name="state_hamedan">همدان</string>
     <string name="state_yazd">یزد</string>
+
+    <string name="city_not_selected">Select city</string>
 </resources>

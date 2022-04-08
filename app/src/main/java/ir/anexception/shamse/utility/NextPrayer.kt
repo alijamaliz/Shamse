@@ -9,9 +9,9 @@ object NextPrayer {
 
     fun calculateNextPrayer(coordinates: Coordinates): List<Any> {
         if (coordinates.latitude < 0) {
-            return listOf("شهر انتخاب نشده", 0, 0)
+            return listOf()
         }
-        val nextPrayerType: String
+        val nextPrayerType: PrayerType
         val nextPrayerHour: Int
         val nextPrayerMinute: Int
 
@@ -54,39 +54,39 @@ object NextPrayer {
         val midnightMinute = ((midnightValue - midnightHour) * 60.0).toInt()
 
         if ((currentHour < fajrHour) || (currentHour == fajrHour && currentMinute <= fajrMinute)) {
-            nextPrayerType = "صبح"
+            nextPrayerType = PrayerType.Fajr
             nextPrayerHour = fajrHour
             nextPrayerMinute = fajrMinute
         } else if ((currentHour < sunRiseHour) || (currentHour == sunRiseHour && currentMinute <= sunRiseMinute)) {
-            nextPrayerType = "طلوع آفتاب"
+            nextPrayerType = PrayerType.Sunrise
             nextPrayerHour = sunRiseHour
             nextPrayerMinute = sunRiseMinute
         } else if ((currentHour < zuhrHour) || (currentHour == zuhrHour && currentMinute <= zuhrMinute)) {
-            nextPrayerType = "ظهر"
+            nextPrayerType = PrayerType.Zuhr
             nextPrayerHour = zuhrHour
             nextPrayerMinute = zuhrMinute
         } else if ((currentHour < asrHour) || (currentHour == asrHour && currentMinute <= asrMinute)) {
-            nextPrayerType = "عصر"
+            nextPrayerType = PrayerType.Asr
             nextPrayerHour = asrHour
             nextPrayerMinute = asrMinute
         } else if ((currentHour < sunSetHour) || (currentHour == sunSetHour && currentMinute <= sunSetMinute)) {
-            nextPrayerType = "غروب آفتاب"
+            nextPrayerType = PrayerType.Sunset
             nextPrayerHour = sunSetHour
             nextPrayerMinute = sunSetMinute
         } else if ((currentHour < maghribHour) || (currentHour == maghribHour && currentMinute <= maghribMinute)) {
-            nextPrayerType = "مغرب"
+            nextPrayerType = PrayerType.Maghrib
             nextPrayerHour = maghribHour
             nextPrayerMinute = maghribMinute
         } else if ((currentHour < ishaHour) || (currentHour == ishaHour && currentMinute <= ishaMinute)) {
-            nextPrayerType = "عشا"
+            nextPrayerType = PrayerType.Isha
             nextPrayerHour = ishaHour
             nextPrayerMinute = ishaMinute
         } else if ((currentHour < midnightHour) || (currentHour == midnightHour && currentMinute <= midnightMinute)) {
-            nextPrayerType = "نیمه شب"
+            nextPrayerType = PrayerType.Midnight
             nextPrayerHour = midnightHour
             nextPrayerMinute = midnightMinute
         } else {
-            nextPrayerType = "صبح"
+            nextPrayerType = PrayerType.Fajr
             nextPrayerHour = fajrHour
             nextPrayerMinute = fajrMinute
         }
@@ -117,4 +117,8 @@ object NextPrayer {
             HighLatitudesMethod.NightMiddle
         )
 
+}
+
+enum class PrayerType {
+    Fajr, Sunrise, Zuhr, Asr, Sunset, Maghrib, Isha, Midnight
 }
