@@ -8,4 +8,40 @@
     <string name="guide2">برای استفاده از کاشی‌ها کافیست مراحل زیر را انجام دهید:</string>
     <string name="guide3">نوار اعلانات خود را پایین کشیده و گزینه ویرایش را انتخاب نمایید.</string>
     <string name="guide4">سپس می‌توانید کاشی‌ها را کشیده و در نوار اعلانات خود رها کنید.</string>
+    <string name="select_city">انتخاب شهر</string>
+    <string name="pray_time">Pray Time</string>
+
+    <string name="state_azarbayjan_east">آذربایجان شرقی</string>
+    <string name="state_azarbayjan_west">آذربایجان غربی</string>
+    <string name="state_ardabil">اردبیل</string>
+    <string name="state_esfahan">اصفهان</string>
+    <string name="state_alborz">البرز</string>
+    <string name="state_ilam">ایلام</string>
+    <string name="state_bushehr">بوشهر</string>
+    <string name="state_tehran">تهران</string>
+    <string name="state_chaharmahal_and_bakhtiyari">چهارمحال و بختیاری</string>
+    <string name="state_khorasan_south">خراسان جنوبی</string>
+    <string name="state_khorasan_razavi">خراسان رضوی</string>
+    <string name="state_khorasan_north">خراسان شمالی</string>
+    <string name="state_khuzestan">خوزستان</string>
+    <string name="state_zanjan">زنجان</string>
+    <string name="state_semnan">سمنان</string>
+    <string name="state_sistan_and_baluchestan">سیستان و بلوچستان</string>
+    <string name="state_fars">فارس</string>
+    <string name="state_qazvin">قزوین</string>
+    <string name="state_qom">قم</string>
+    <string name="state_kordestan">کردستان</string>
+    <string name="state_kerman">کرمان</string>
+    <string name="state_kermanshah">کرمانشاه</string>
+    <string name="state_kohkilouye_and_boyerahmad">کهگیلویه و بویراحمد</string>
+    <string name="state_golestan">گلستان</string>
+    <string name="state_gilan">گیلان</string>
+    <string name="state_lorestan">لرستان</string>
+    <string name="state_mazandaran">مازندران</string>
+    <string name="state_markazi">مرکزی</string>
+    <string name="state_hormozgan">هرمزگان</string>
+    <string name="state_hamedan">همدان</string>
+    <string name="state_yazd">یزد</string>
+
+    <string name="city_not_selected">Select city</string>
 </resources>

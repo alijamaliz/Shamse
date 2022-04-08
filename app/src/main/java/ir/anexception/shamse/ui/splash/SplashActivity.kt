@@ -1,11 +1,12 @@
-package ir.anexception.shamse
+package ir.anexception.shamse.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import java.util.*
+import ir.anexception.shamse.R
+import ir.anexception.shamse.ui.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

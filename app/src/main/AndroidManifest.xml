@@ -3,20 +3,21 @@
     package="ir.anexception.shamse">
 
     <application
+        android:name="ir.anexception.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Iranexceptionshamse">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.main.MainActivity" />
 
         <service
             android:name=".tiles.ShamseTile"
@@ -57,6 +58,16 @@
             android:exported="true"
             android:icon="@drawable/haj_ghasem"
             android:label="@string/tile_haj_ghasem"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".tiles.NextPrayerTile"
+            android:exported="true"
+            android:icon="@drawable/ic_time"
+            android:label="@string/pray_time"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
