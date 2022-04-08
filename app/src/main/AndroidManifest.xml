@@ -64,7 +64,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".tiles.NextAzanTile"
+            android:name=".tiles.NextPrayerTile"
             android:exported="true"
             android:icon="@drawable/ic_time"
             android:label="@string/pray_time"

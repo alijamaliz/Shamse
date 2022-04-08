@@ -5,90 +5,90 @@ import io.github.persiancalendar.praytimes.*
 import ir.anexception.shamse.BuildConfig
 import java.util.*
 
-object NextAzan {
+object NextPrayer {
 
-    fun calculateNextAzan(coordinates: Coordinates): List<Any> {
+    fun calculateNextPrayer(coordinates: Coordinates): List<Any> {
         if (coordinates.latitude < 0) {
             return listOf("شهر انتخاب نشده", 0, 0)
         }
-        var nextAzanType = ""
-        var nextAzanHour = -1
-        var nextAzanMinute = -1
+        val nextPrayerType: String
+        val nextPrayerHour: Int
+        val nextPrayerMinute: Int
 
         val rightNow = Calendar.getInstance()
         val currentHour: Int = rightNow.get(Calendar.HOUR_OF_DAY)
         val currentMinute: Int = rightNow.get(Calendar.MINUTE)
 
-        var azansTime = calculateAzan(coordinates)
+        val prayerTimes = calculatePrayerTimes(coordinates)
 
-        val fajrValue = (azansTime.fajr + 0.5 / 60) % 24
+        val fajrValue = (prayerTimes.fajr + 0.5 / 60) % 24
         val fajrHour = fajrValue.toInt()
         val fajrMinute = ((fajrValue - fajrHour) * 60.0).toInt()
 
-        val sunRiseValue = (azansTime.sunrise + 0.5 / 60) % 24
+        val sunRiseValue = (prayerTimes.sunrise + 0.5 / 60) % 24
         val sunRiseHour = sunRiseValue.toInt()
         val sunRiseMinute = ((sunRiseValue - sunRiseHour) * 60.0).toInt()
 
-        val zuhrValue = (azansTime.dhuhr + 0.5 / 60) % 24
+        val zuhrValue = (prayerTimes.dhuhr + 0.5 / 60) % 24
         val zuhrHour = zuhrValue.toInt()
         val zuhrMinute = ((zuhrValue - zuhrHour) * 60.0).toInt()
 
-        val asrValue = (azansTime.asr + 0.5 / 60) % 24
+        val asrValue = (prayerTimes.asr + 0.5 / 60) % 24
         val asrHour = asrValue.toInt()
         val asrMinute = ((asrValue - asrHour) * 60.0).toInt()
 
-        val sunSetValue = (azansTime.sunset + 0.5 / 60) % 24
+        val sunSetValue = (prayerTimes.sunset + 0.5 / 60) % 24
         val sunSetHour = sunSetValue.toInt()
         val sunSetMinute = ((sunSetValue - sunSetHour) * 60.0).toInt()
 
-        val maghribValue = (azansTime.maghrib + 0.5 / 60) % 24
+        val maghribValue = (prayerTimes.maghrib + 0.5 / 60) % 24
         val maghribHour = maghribValue.toInt()
         val maghribMinute = ((maghribValue - maghribHour) * 60.0).toInt()
 
-        val ishaValue = (azansTime.isha + 0.5 / 60) % 24
+        val ishaValue = (prayerTimes.isha + 0.5 / 60) % 24
         val ishaHour = ishaValue.toInt()
         val ishaMinute = ((ishaValue - ishaHour) * 60.0).toInt()
 
-        val midnightValue = (azansTime.midnight + 0.5 / 60) % 24
+        val midnightValue = (prayerTimes.midnight + 0.5 / 60) % 24
         val midnightHour = midnightValue.toInt()
         val midnightMinute = ((midnightValue - midnightHour) * 60.0).toInt()
 
         if ((currentHour < fajrHour) || (currentHour == fajrHour && currentMinute <= fajrMinute)) {
-            nextAzanType = "صبح"
-            nextAzanHour = fajrHour
-            nextAzanMinute = fajrMinute
+            nextPrayerType = "صبح"
+            nextPrayerHour = fajrHour
+            nextPrayerMinute = fajrMinute
         } else if ((currentHour < sunRiseHour) || (currentHour == sunRiseHour && currentMinute <= sunRiseMinute)) {
-            nextAzanType = "طلوع آفتاب"
-            nextAzanHour = sunRiseHour
-            nextAzanMinute = sunRiseMinute
+            nextPrayerType = "طلوع آفتاب"
+            nextPrayerHour = sunRiseHour
+            nextPrayerMinute = sunRiseMinute
         } else if ((currentHour < zuhrHour) || (currentHour == zuhrHour && currentMinute <= zuhrMinute)) {
-            nextAzanType = "ظهر"
-            nextAzanHour = zuhrHour
-            nextAzanMinute = zuhrMinute
+            nextPrayerType = "ظهر"
+            nextPrayerHour = zuhrHour
+            nextPrayerMinute = zuhrMinute
         } else if ((currentHour < asrHour) || (currentHour == asrHour && currentMinute <= asrMinute)) {
-            nextAzanType = "عصر"
-            nextAzanHour = asrHour
-            nextAzanMinute = asrMinute
+            nextPrayerType = "عصر"
+            nextPrayerHour = asrHour
+            nextPrayerMinute = asrMinute
         } else if ((currentHour < sunSetHour) || (currentHour == sunSetHour && currentMinute <= sunSetMinute)) {
-            nextAzanType = "غروب آفتاب"
-            nextAzanHour = sunSetHour
-            nextAzanMinute = sunSetMinute
+            nextPrayerType = "غروب آفتاب"
+            nextPrayerHour = sunSetHour
+            nextPrayerMinute = sunSetMinute
         } else if ((currentHour < maghribHour) || (currentHour == maghribHour && currentMinute <= maghribMinute)) {
-            nextAzanType = "مغرب"
-            nextAzanHour = maghribHour
-            nextAzanMinute = maghribMinute
+            nextPrayerType = "مغرب"
+            nextPrayerHour = maghribHour
+            nextPrayerMinute = maghribMinute
         } else if ((currentHour < ishaHour) || (currentHour == ishaHour && currentMinute <= ishaMinute)) {
-            nextAzanType = "عشا"
-            nextAzanHour = ishaHour
-            nextAzanMinute = ishaMinute
+            nextPrayerType = "عشا"
+            nextPrayerHour = ishaHour
+            nextPrayerMinute = ishaMinute
         } else if ((currentHour < midnightHour) || (currentHour == midnightHour && currentMinute <= midnightMinute)) {
-            nextAzanType = "نیمه شب"
-            nextAzanHour = midnightHour
-            nextAzanMinute = midnightMinute
+            nextPrayerType = "نیمه شب"
+            nextPrayerHour = midnightHour
+            nextPrayerMinute = midnightMinute
         } else {
-            nextAzanType = "صبح"
-            nextAzanHour = fajrHour
-            nextAzanMinute = fajrMinute
+            nextPrayerType = "صبح"
+            nextPrayerHour = fajrHour
+            nextPrayerMinute = fajrMinute
         }
 
         if (BuildConfig.DEBUG) {
@@ -102,13 +102,13 @@ object NextAzan {
             Log.i("NextAzan", "mid  hour: $midnightHour   mid minute: $midnightMinute")
             Log.i(
                 "NextAzan",
-                "nextAzanType: $nextAzanType     nextAzanHour: $nextAzanHour     nextAzanMinute $nextAzanMinute"
+                "nextAzanType: $nextPrayerType     nextAzanHour: $nextPrayerHour     nextAzanMinute $nextPrayerMinute"
             )
         }
-        return listOf(nextAzanType, nextAzanHour, nextAzanMinute)
+        return listOf(nextPrayerType, nextPrayerHour, nextPrayerMinute)
     }
 
-    private fun calculateAzan(coordinates: Coordinates) =
+    private fun calculatePrayerTimes(coordinates: Coordinates) =
         PrayTimes(
             CalculationMethod.Tehran,
             GregorianCalendar(),

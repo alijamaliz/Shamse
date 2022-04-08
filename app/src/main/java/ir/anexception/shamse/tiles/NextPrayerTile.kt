@@ -4,15 +4,13 @@ import android.content.Intent
 import android.graphics.drawable.Icon
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import android.util.Log
 import io.github.persiancalendar.praytimes.Coordinates
-import ir.anexception.shamse.BuildConfig
 import ir.anexception.shamse.ui.main.MainActivity
 import ir.anexception.shamse.utility.AppPreferences
-import ir.anexception.shamse.utility.NextAzan.calculateNextAzan
+import ir.anexception.shamse.utility.NextPrayer.calculateNextPrayer
 import ir.anexception.shamse.utility.Tool.createStatusIcon
 
-class NextAzanTile : TileService() {
+class NextPrayerTile : TileService() {
     override fun onClick() {
         super.onClick()
         startActivityAndCollapse(
@@ -31,7 +29,7 @@ class NextAzanTile : TileService() {
     }
 
     private fun updateTile() {
-        val nextAzan = calculateNextAzan(
+        val nextAzan = calculateNextPrayer(
             Coordinates(
                 AppPreferences.stateLatitude.toDouble(),
                 AppPreferences.stateLongitude.toDouble(),
